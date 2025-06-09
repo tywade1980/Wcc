@@ -1,6 +1,7 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  output: "export", // Enables static exports
+  // Removed static export to allow API routes
+  // output: "export", // Enables static exports
   // Optional: Add other configurations here if needed later
   // For example, to handle images from external sources if you add them:
   // images: {
@@ -9,4 +10,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-
