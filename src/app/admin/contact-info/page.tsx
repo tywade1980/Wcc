@@ -55,10 +55,19 @@ export default function AdminContactInfo() {
       setContactInfo({
         ...contactInfo,
         [parent]: {
-          ...contactInfo[parent as keyof ContactInfo],
-          [child]: value
-        }
-      });
+const parentKey = parent as keyof ContactInfo;
+const currentParent = contactInfo[parentKey];
+
+if (typeof currentParent === 'object' && currentParent !== null) {
+  setContactInfo({
+    ...contactInfo,
+    [parent]: {
+      ...currentParent,
+      [child]: value
+    }
+  });
+}
+
     } else {
       // Handle top-level properties
       setContactInfo({
