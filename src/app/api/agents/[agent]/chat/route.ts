@@ -4,7 +4,7 @@ import { getAgent, type AgentId } from "@/lib/agents/registry";
 import { requireOffice } from "@/lib/office-auth";
 import type Anthropic from "@anthropic-ai/sdk";
 export const dynamic = "force-dynamic";
-export const maxDuration = 300;
+export const maxDuration = 60; // Vercel Hobby cap without Fluid Compute; raise once the plan allows
 
 export async function POST(req: Request, { params }: { params: Promise<{ agent: string }> }) {
   const denied = await requireOffice(req);
