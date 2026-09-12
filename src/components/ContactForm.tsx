@@ -58,7 +58,7 @@ export default function ContactForm() {
     });
     
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

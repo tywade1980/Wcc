@@ -75,7 +75,7 @@ export default function AdminSeo() {
       setSeoSettings({
         ...seoSettings,
         [parent]: {
-          ...seoSettings[parent as keyof SeoSettings],
+          ...(seoSettings[parent as keyof SeoSettings] as object),
           [child]: value
         }
       });
@@ -97,7 +97,7 @@ export default function AdminSeo() {
       setSeoSettings({
         ...seoSettings,
         [parent]: {
-          ...seoSettings[parent as keyof SeoSettings],
+          ...(seoSettings[parent as keyof SeoSettings] as object),
           [child]: checked
         }
       });
